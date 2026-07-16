@@ -12,3 +12,9 @@ export class ResolveInstanceError extends RootError {
         super(token as string);
     }
 }
+
+export class ResolveCycleError extends RootError {
+    constructor(tokens: Token[]) {
+        super(tokens.join(' - ') as string);
+    }
+}
